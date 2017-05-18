@@ -26,7 +26,7 @@ module.exports = {
     filename: 'bundle.js',
     // the output bundle
 
-    path: path.resolve(parentPath, 'dist'),
+    path: path.resolve(parentPath, 'docs'),
 
     publicPath: '/'
     // necessary for HMR to know where to load the hot update chunks
@@ -38,7 +38,7 @@ module.exports = {
     hot: true,
     // enable HMR on the server
 
-    contentBase: path.resolve(parentPath, 'dist'),
+    contentBase: path.resolve(parentPath, 'docs'),
     // match the output path
 
     publicPath: '/',
