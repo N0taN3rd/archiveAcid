@@ -27,4 +27,11 @@ axios.get(atob(nurls.evalInjected))
     console.error(error)
   })
 
-
+/*
+ fetch('https://crossorigin.me/http://lorempixel.com/400/200/nightlife/',{method: 'GET', headers: new Headers({'Origin': location.origin})}).then(ret => ret.blob())
+ .then((ret) => {
+ console.log(ret)
+ }).catch(error => {
+ console.error(error)
+ })
+ */
