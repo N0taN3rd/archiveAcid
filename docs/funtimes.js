@@ -1,3 +1,5 @@
 var elem = document.getElementById('evalInject')
-elem.innerHTML = `<iframe id="theIframeEvaled" src="https://crossorigin.me/http://www.cs.odu.edu/~jberlin/evalInjectedIframe.html"></iframe>`
+var dcoded = atob(document.getElementById('heheh').innerHTML)
+var makeFun =   ["`", "<", "i", "f", "r", "a", "m", "e", " ", "i", "d", "=", "'", "t", "h", "e", "I", "f", "r", "a", "m", "e", "E", "v", "a", "l", "e", "d", "'", " ", "s", "r", "c", "=", "'", "$", "{", "d", "c", "o", "d", "e", "d", "}", "'", ">", "<", "/", "i", "f", "r", "a", "m", "e", ">", "`"]
+elem.innerHTML = eval(makeFun.join(''))
 
