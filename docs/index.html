@@ -3,11 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <title>Fun!!</title>
+    <style>
+        body {
+            background: #e2e1e0;
+        }
+
+        .alert {
+            padding: 20px;
+            background-color: #f44336; /* Red */
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .success {
+            background-color: #4CAF50;
+        }
+
+        .flexer {
+            display: flex;
+        }
+
+        .evalInjectContainer {
+            background: #fff;
+            border-radius: 2px;
+            width: 100%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .randyNumsScoller {
+            overflow-Y: auto;
+            overflow-x: auto;
+            max-height: 250px;
+            width: 70%;
+            padding: 25px;
+        }
+
+        .evalInjectedDiv {
+            width: 30%;
+        }
+
+        .corsMEContainer {
+            width: 100%;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .corsME {
+            text-align: center;
+            margin: 1rem;
+            background: #fff;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .corsME::before {
+            content: 'This is an url and will be using it to make a request to the live web. :)';
+        }
+
+        .corsME2 {
+            text-align: center;
+            background: #fff;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+    </style>
 </head>
 <body>
-<div id="evalInject"></div>
-<div id="randyNums"></div>
-<p style="display: none" id="heheh">aHR0cDovL3d3dy5jcy5vZHUuZWR1L35qYmVybGluL2V2YWxJbmplY3RlZElmcmFtZS5odG1s</p>
+<p id="hostNotif"></p>
+<div class="flexer evalInjectContainer">
+    <div class="evalInjectedDiv" id="evalInject"></div>
+    <div class="randyNumsScoller" id="randyNums"></div>
+</div>
+<div class="corsMEContainer">
+    <div class="corsME" id="corsMe">
+        <p id="coresMeURL">aHR0cHM6Ly9jcm9zc29yaWdpbi5tZS9odHRwOi8vbG9yZW1waXhlbC5jb20vNDAwLzIwMC9uaWdodGxpZmUv</p>
+        <div id="coresMeImDiv"></div>
+    </div>
+    <div class="corsME2" id="corsMe2">
+        <p>This the same url but I will play nice. Still going to use it to make a request to the live web. :)</p>
+        <a id="coresMeUR2L" href="https://crossorigin.me/http://lorempixel.com/400/200/">https://crossorigin.me/http://lorempixel.com/400/200/</a>
+        <div id="coresMeImDiv2"></div>
+    </div>
+</div>
+<p style="display: none" id="heheh">aHR0cDovL3d3dy5jcy5vZHUuZWR1L35qYmVybGluL2V2YWxJbmplY3RlZElmcmFtZTIuaHRtbA==</p>
 <script src="bundle.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const parentPath = path.resolve(__dirname, '../')
 
@@ -19,32 +19,32 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         exclude: /node_modules/
       },
       {
         test: /\.css$/,
         use: [
-          {loader: "style-loader"},
+          {loader: 'style-loader'},
           {
-            loader: "css-loader"
-          },
-        ],
+            loader: 'css-loader'
+          }
+        ]
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ico)$/,
-        loader: 'url-loader?limit=10000',
+        loader: 'url-loader?limit=10000'
       }, {
         test: /\.json$/,
-        loader: 'json-loader',
+        loader: 'json-loader'
       }, {
         test: /\.(eot|ttf|wav|mp3|tex)$/,
-        loader: 'file-loader',
+        loader: 'file-loader'
       }, {
         test: /\.(txt|xml|cxml)$/,
-        loader: 'raw-loader',
+        loader: 'raw-loader'
       }
-    ],
+    ]
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -54,11 +54,11 @@ module.exports = {
       sourceMap: false,
       compress: {
         warnings: false,
-        drop_console: false,
+        drop_console: false
       }
-    }),
+    })
     // new BundleAnalyzerPlugin({
     //   analyzerMode: 'static'
     // }),
-  ],
+  ]
 }

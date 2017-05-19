@@ -1,6 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const parentPath = path.resolve(__dirname, '../')
 
@@ -44,9 +44,9 @@ module.exports = {
     publicPath: '/',
     // match the output `publicPath`
     headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
     }
   },
 
@@ -54,21 +54,21 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        use: ['babel-loader',],
+        use: ['babel-loader'],
         exclude: /node_modules/
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader?modules',],
-      },
-    ],
+        use: ['style-loader', 'css-loader?modules']
+      }
+    ]
   },
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     // enable HMR globally
 
-    new webpack.NamedModulesPlugin(),
+    new webpack.NamedModulesPlugin()
     // prints more readable module names in the browser console on HMR updates
   ]
-};
+}
