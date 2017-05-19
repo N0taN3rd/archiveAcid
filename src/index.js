@@ -56,12 +56,6 @@ axios.get(atob(nurls.evalInjected))
     console.error(error)
   })
 
-let arr = []
-for (let it of 'https://www.random.org') {
-  arr.push(it)
-}
-
-console.log(arr)
 
 /*
  fetch('https://crossorigin.me/http://lorempixel.com/400/200/nightlife/',{method: 'GET', headers: new Headers({'Origin': location.origin})}).then(ret => ret.blob())
