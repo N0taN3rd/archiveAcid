@@ -14,10 +14,12 @@ const getMeThis = {
 }
 
 // http://web.archive.org/web/20170518223727/http://www.cs.odu.edu/~jberlin/funTimes/
+// http://web.archive.org/web/20170519033130/http://www.cs.odu.edu/~jberlin/funtimes2/
+// http://web.archive.org/web/20170519034938/http://www.cs.odu.edu/~jberlin/funtimes2/ almost better
+// http://web.archive.org/web/20170519034938/http://www.cs.odu.edu/~jberlin/funtimes2/ gotcha
 
 function messageHandler (e) {
   if (e.data) {
-    console.log(e)
     switch (e.data.type) {
       case 'alvie':
         e.source.postMessage(getMeThis, e.origin)

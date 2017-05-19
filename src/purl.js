@@ -1,6 +1,6 @@
 export default class Purl {
   constructor (expectLocation, notifyID) {
-    let n = document[ Object.keys((document))[ 0 ] ].host
+    let n = document[Object.keys(document)[0]].host || window.location.host
     this.ok = true
     if (n !== expectLocation.host) {
       this.ok = false
@@ -10,7 +10,7 @@ export default class Purl {
       document.getElementById(notifyID).innerHTML = `<p class="alert">${message}</p>`
     } else {
       let message = `This page is on the expected host of ${expectLocation.host}`
-      message += 'No adjustment necessary'
+      message += '<br>No adjustment necessary'
       document.getElementById(notifyID).innerHTML = `<p class="success">${message}</p>`
     }
     this._expectLocation = expectLocation
