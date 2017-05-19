@@ -3,6 +3,7 @@ import axios from 'axios'
 import nurls from './notUrls'
 import Purl from './purl'
 import doCorsMe from './doCorsMe'
+import cleanUpRandyHTML from './cleanUpRandyHTML'
 
 const helpers = {
   purl: null
@@ -17,6 +18,7 @@ const getMeThis = {
 // http://web.archive.org/web/20170519033130/http://www.cs.odu.edu/~jberlin/funtimes2/
 // http://web.archive.org/web/20170519034938/http://www.cs.odu.edu/~jberlin/funtimes2/ almost better
 // http://web.archive.org/web/20170519034938/http://www.cs.odu.edu/~jberlin/funtimes2/ gotcha
+// http://web.archive.org/web/20170519051421/http://www.cs.odu.edu/~jberlin/funtimes2/ gotcha even more
 
 function messageHandler (e) {
   if (e.data) {
@@ -28,7 +30,7 @@ function messageHandler (e) {
       case 'fetched':
         if (e.data.id === 'nums') {
           let num = document.getElementById('randyNums')
-          num.innerHTML = e.data.data
+          num.innerHTML = cleanUpRandyHTML(e.data.data, nurls.randyNumsAppend)
           doCorsMe('coresMeURL', 'coresMeImDiv', helpers.purl, true)
             .then(() => doCorsMe('coresMeUR2L', 'coresMeImDiv2', helpers.purl))
             .then(() => {
@@ -53,6 +55,13 @@ axios.get(atob(nurls.evalInjected))
   .catch(error => {
     console.error(error)
   })
+
+let arr = []
+for (let it of 'https://www.random.org') {
+  arr.push(it)
+}
+
+console.log(arr)
 
 /*
  fetch('https://crossorigin.me/http://lorempixel.com/400/200/nightlife/',{method: 'GET', headers: new Headers({'Origin': location.origin})}).then(ret => ret.blob())
